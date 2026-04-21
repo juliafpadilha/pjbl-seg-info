@@ -4,4 +4,10 @@
   "email" : "juliafpadilha@gmail.com",
   "role" : "USER",
   "senhaHash" : "$2a$12$QtbLYeMY.dN1Kuik/S4SdO9AJe9iZ6uRSbHsAnQpIJDHwji8bd2K6"
+}, {
+  "id" : "3eb18c47-0910-428e-99cb-6e980017cf04",
+  "nome" : null,
+  "email" : "mateuslbailo@gmail.com",
+  "role" : "USER",
+  "senhaHash" : "$2a$12$a294YQNrMsJdPE2KuRAFAeZQyRwWJNyzFm9DZxtd3M.tm0UJfaQzK"
 } ]

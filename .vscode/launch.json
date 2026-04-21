@@ -1,0 +1,22 @@
+{
+   "version": "0.2.0",
+   "configurations": [
+      {
+         "type": "java",
+         "name": "Rodar API PjBL",
+         "request": "launch",
+         "mainClass": "com.pucpr.Main",
+         "projectName": "pjbl-auth",
+         "env": {
+            "JWT_SECRET": "nossa_senha_complicada_e_aleatoria_com_mais_de_32_caracteres_pjbl"
+         }
+      },
+      {
+         "type": "java",
+         "name": "Main",
+         "request": "launch",
+         "mainClass": "com.pucpr.Main",
+         "projectName": "pjbl-auth"
+      }
+   ]
+}
