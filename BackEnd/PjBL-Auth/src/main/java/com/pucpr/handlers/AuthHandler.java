@@ -37,6 +37,19 @@ public class AuthHandler {
         public String role;
     }
 
+    private boolean handleCors(HttpExchange exchange) throws IOException {
+    exchange.getResponseHeaders().add("Access-Control-Allow-Origin", "*");
+    exchange.getResponseHeaders().add("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+    exchange.getResponseHeaders().add("Access-Control-Allow-Headers", "Content-Type, Authorization");
+
+        if (exchange.getRequestMethod().equalsIgnoreCase("OPTIONS")) {
+            exchange.sendResponseHeaders(204, -1);
+            return true;
+        }
+
+        return false;
+    }
+
     private void sendJsonResponse(HttpExchange exchange, int statusCode, String responseMessage) throws IOException {
         exchange.getResponseHeaders().set("Content-Type", "application/json");
         byte[] bytes = responseMessage.getBytes("UTF-8");
@@ -48,6 +61,7 @@ public class AuthHandler {
 
     // Gerencia o processo de Login
     public void handleLogin(HttpExchange exchange) throws IOException {
+        handleCors(exchange);
         if (!"POST".equals(exchange.getRequestMethod())) {
             exchange.sendResponseHeaders(405, -1); // 405 Method Not Allowed
             return;
@@ -78,6 +92,7 @@ public class AuthHandler {
 
     // Gerencia o processo de Cadastro (Registro)
     public void handleRegister(HttpExchange exchange) throws IOException {
+        handleCors(exchange);
         if (!"POST".equals(exchange.getRequestMethod())) {
             exchange.sendResponseHeaders(405, -1);
             return;
